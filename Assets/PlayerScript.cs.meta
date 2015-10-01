@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 0eb8ba4000daa67459c55d2a31710dc3
+timeCreated: 1443496200
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - IceProjectile: {fileID: 179242, guid: d798d90a8face3e4fbdfa006ecd911a7, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
