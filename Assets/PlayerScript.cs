@@ -10,10 +10,12 @@ public class PlayerScript : MonoBehaviour {
 	
 	private AudioSource audioAmb;
 	private AudioSource audioShoot;
+
+	public GameObject GameController;
 	bool shooting = false;
 	int Ammo = 6;
 	float AmmoRegen = 2f;
-	float SavedTime;
+	float SavedTime, TouchTime = 0;
 	// Use this for initialization
 	void Awake () {
 		SavedTime = Time.time;
@@ -29,6 +31,18 @@ public class PlayerScript : MonoBehaviour {
 		newAudio.playOnAwake = playAwake;
 		newAudio.volume = vol; 
 		return newAudio; 
+	}
+	void OnTriggerStay(Collider other) {
+
+		if (other.gameObject.tag == "Enemy") {
+			TouchTime = TouchTime + Time.deltaTime;
+			Debug.Log(TouchTime);
+			if(TouchTime > 10.0f){
+
+				GameController.gameObject.GetComponent<GameScript>().EndGame();
+			}
+		}
+
 	}
 
 	
