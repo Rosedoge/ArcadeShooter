@@ -7,21 +7,33 @@ public class PlayerScript : MonoBehaviour {
 	public Text HealthTxt;
 	public GameObject IceProjectile;
 	public AudioClip clipAmb; 
+	public AudioClip clipAmb2;
+	public AudioClip clipAmb3;
+	public AudioClip clipAmb4; 
+
+
 	public AudioClip clipShoot;
 	
 	private AudioSource audioAmb;
+	private AudioSource audioAmb2;
+	private AudioSource audioAmb3;
+	private AudioSource audioAmb4;
+
 	private AudioSource audioShoot;
 
 	public GameObject GameController;
 	bool shooting = false;
-	int Ammo = 1;
+	int Ammo = 6;
 	int health = 10;
 	float AmmoRegen = 2f;
 	float SavedTime, TouchTime = 0;
 	// Use this for initialization
 	void Awake () {
 		SavedTime = Time.time;
-		audioAmb = AddAudio(clipAmb, true, true, 0.2f);
+		audioAmb = AddAudio(clipAmb, true, false, 0.2f);
+		audioAmb2 = AddAudio(clipAmb2, true, true, 0.2f); // always
+		audioAmb3 = AddAudio(clipAmb3, true, false, 0.2f);
+		audioAmb4 = AddAudio(clipAmb4, true, false, 0.2f);
 		audioShoot = AddAudio(clipShoot, false, false, 0.2f);
 		audioAmb.Play ();
 
@@ -89,6 +101,26 @@ public class PlayerScript : MonoBehaviour {
 		}
 		Controls ();
 		UpdateUI ();
+		AudioUpdate ();
+	}
+
+	void AudioUpdate(){
+		if (health >= 7) {
+			//Nothing?
+		} else if (health < 7 && health >= 4) {
+			audioAmb2.Stop();
+			audioAmb3.Play();
+
+		}else if (health < 4 && health >= 1) {
+			audioAmb3.Stop();
+			audioAmb4.Play();
+			
+		}else if (health < 1 ) {
+			audioAmb4.Stop();
+			audioAmb.Play();
+			
+		}
+
 	}
 
 	void Controls() {

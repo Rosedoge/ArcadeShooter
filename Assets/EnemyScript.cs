@@ -19,8 +19,8 @@ public class EnemyScript : MonoBehaviour {
 		agent.destination = goal.gameObject.transform.position; 
 	}
 
-	public void Kill(){
-		Controller.GetComponent<GameScript>().EnemyManager(this.gameObject.transform);
+	public void Kill(Vector3 Impact){
+		Controller.GetComponent<GameScript>().EnemyManager(this.gameObject.transform, Impact);
 		Controller.GetComponent<GameScript>().curEnemy -=1;
 		Debug.Log("Spawned?");
 		Destroy(this.gameObject);
@@ -28,10 +28,10 @@ public class EnemyScript : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision col){
-		Debug.Log ("WAH");
+		//Debug.Log ("WAH");
 		if (col.gameObject.tag == "Bullet") {
 
-			Kill ();
+			Kill (col.gameObject.transform.position);
 		}
 
 	}

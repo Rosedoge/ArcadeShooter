@@ -12,13 +12,13 @@ public class GameScript : MonoBehaviour {
 	const int enemyLimit = 20;
 	public int curEnemy = 2; //spawns two to starts
 	int curSpawnLoc = 0;
-	private bool over = false;
+//	private bool over = false;
 
 
 
 	// Use this for initialization
 	void Start () {
-		SpawnEnemy (1, SpawnLocs[1].transform); // one to start
+		SpawnEnemy (1, SpawnLocs[1].transform, SpawnLocs[0].gameObject.transform.position); // one to start
 
 	}
 	
@@ -27,18 +27,21 @@ public class GameScript : MonoBehaviour {
 
 
 	}
-	void SpawnEnemy(int NeededSpawns, Transform deadEnemy){
+	void SpawnEnemy(int NeededSpawns, Transform deadEnemy, Vector3 Impact){
 		Vector3 temp;
 		if (NeededSpawns == 2) {
 			GameObject Enemy = (GameObject)Instantiate (EnemyPrefab, deadEnemy.gameObject.transform.position,  SpawnLocs [curSpawnLoc].gameObject.transform.rotation);
 			upCurSpawn ();
+
 			temp = deadEnemy.gameObject.transform.position;
 			temp += new Vector3(0,0,1);
 			GameObject Enemy2 = (GameObject)Instantiate (EnemyPrefab, temp,  SpawnLocs [curSpawnLoc].gameObject.transform.rotation);
+
 			upCurSpawn ();
 		} else if(NeededSpawns == 1) {
 			GameObject Enemy = (GameObject)Instantiate (EnemyPrefab, deadEnemy.gameObject.transform.position,  SpawnLocs [curSpawnLoc].gameObject.transform.rotation);
 			upCurSpawn ();
+
 
 		}
 
@@ -51,13 +54,13 @@ public class GameScript : MonoBehaviour {
 		curEnemy++;
 
 	}
-	public void EnemyManager(Transform deadEnemy){
+	public void EnemyManager(Transform deadEnemy, Vector3 Impact){
 		//Debug.Log("Spawned event");
 		if (curEnemy < enemyLimit) {
 			if ((curEnemy + 2) >= enemyLimit) {
-				SpawnEnemy (1, deadEnemy);
+				SpawnEnemy (1, deadEnemy, Impact);
 			} else if ((curEnemy + 2) <= enemyLimit) {
-				SpawnEnemy (2, deadEnemy);
+				SpawnEnemy (2, deadEnemy, Impact);
 
 			}
 			Debug.Log (curEnemy);
