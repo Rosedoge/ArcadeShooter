@@ -19,13 +19,19 @@ public class EnemyScript : MonoBehaviour {
 		agent.destination = goal.gameObject.transform.position; 
 	}
 
+	public void Kill(){
+		Controller.GetComponent<GameScript>().EnemyManager(this.gameObject.transform);
+		Controller.GetComponent<GameScript>().curEnemy -=1;
+		Debug.Log("Spawned?");
+		Destroy(this.gameObject);
+
+	}
+
 	void OnCollisionEnter(Collision col){
 		Debug.Log ("WAH");
 		if (col.gameObject.tag == "Bullet") {
 
-			Controller.GetComponent<GameScript>().EnemyManager(this.gameObject.transform);
-			Debug.Log("Spawned?");
-			Destroy(this.gameObject);
+			Kill ();
 		}
 
 	}

@@ -4,6 +4,7 @@ using System.Collections;
 public class Bullet : MonoBehaviour {
 	float speed = 300f;
 	float timer = 0f;
+	bool HitEnemy = false;
   void start () {
 	
 	}
@@ -26,6 +27,18 @@ public class Bullet : MonoBehaviour {
 		{
 			GameObject.Destroy(this.gameObject);
 		}
+	}
+
+	void OnCollisionEnter(Collision col){
+		if (col.gameObject.tag == "Enemy" && HitEnemy == false) {
+//			//col.gameObject.GetComponent<EnemyScript>().Kill();
+//			HitEnemy = true;
+			GameObject.Destroy(this.gameObject);
+
+		}
+
+
+
 	}
 
 

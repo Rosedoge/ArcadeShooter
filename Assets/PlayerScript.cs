@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour {
 	public Text AmmoTxt;
+	public Text HealthTxt;
 	public GameObject IceProjectile;
 	public AudioClip clipAmb; 
 	public AudioClip clipShoot;
@@ -13,7 +14,8 @@ public class PlayerScript : MonoBehaviour {
 
 	public GameObject GameController;
 	bool shooting = false;
-	int Ammo = 6;
+	int Ammo = 1;
+	int health = 10;
 	float AmmoRegen = 2f;
 	float SavedTime, TouchTime = 0;
 	// Use this for initialization
@@ -37,6 +39,38 @@ public class PlayerScript : MonoBehaviour {
 		if (other.gameObject.tag == "Enemy") {
 			TouchTime = TouchTime + Time.deltaTime;
 			Debug.Log(TouchTime);
+			switch((int)TouchTime){
+			case 1:
+				health = 9;
+				break;
+			case 2:
+				health = 8;
+				break;
+			case 3:
+				health = 7;
+				break;
+			case 4:
+				health = 6;
+				break;
+			case 5:
+				health = 5;
+				break;
+			case 6:
+				health = 4;
+				break;
+			case 7:
+				health = 3;
+				break;
+			case 8:
+				health = 2;
+				break;
+			case 9:
+				health = 1;
+				break;
+			case 10:
+				health = 0;
+				break;
+			}
 			if(TouchTime > 10.0f){
 
 				GameController.gameObject.GetComponent<GameScript>().EndGame();
@@ -70,12 +104,16 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	void UpdateUI() {
-		string ammotemp = "";
+		string ammotemp = "Ammo: ";
+		string healthtemp = "";
 		for (int i = 1; i <= Ammo; i++) {
 			ammotemp = ammotemp + "█";
 		}
-
+		for (int i = 1; i <= health; i++) {
+			healthtemp = healthtemp + "█";
+		}
 		AmmoTxt.text= ammotemp;
+		HealthTxt.text= healthtemp;
 
 	}
 	void Shoot(){

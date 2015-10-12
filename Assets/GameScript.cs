@@ -10,8 +10,10 @@ public class GameScript : MonoBehaviour {
 
 	//local variables
 	const int enemyLimit = 20;
-	int curEnemy = 2; //spawns two to starts
+	public int curEnemy = 2; //spawns two to starts
 	int curSpawnLoc = 0;
+	private bool over = false;
+
 
 
 	// Use this for initialization
@@ -26,10 +28,13 @@ public class GameScript : MonoBehaviour {
 
 	}
 	void SpawnEnemy(int NeededSpawns, Transform deadEnemy){
+		Vector3 temp;
 		if (NeededSpawns == 2) {
 			GameObject Enemy = (GameObject)Instantiate (EnemyPrefab, deadEnemy.gameObject.transform.position,  SpawnLocs [curSpawnLoc].gameObject.transform.rotation);
 			upCurSpawn ();
-			GameObject Enemy2 = (GameObject)Instantiate (EnemyPrefab, deadEnemy.gameObject.transform.position,  SpawnLocs [curSpawnLoc].gameObject.transform.rotation);
+			temp = deadEnemy.gameObject.transform.position;
+			temp += new Vector3(0,0,1);
+			GameObject Enemy2 = (GameObject)Instantiate (EnemyPrefab, temp,  SpawnLocs [curSpawnLoc].gameObject.transform.rotation);
 			upCurSpawn ();
 		} else if(NeededSpawns == 1) {
 			GameObject Enemy = (GameObject)Instantiate (EnemyPrefab, deadEnemy.gameObject.transform.position,  SpawnLocs [curSpawnLoc].gameObject.transform.rotation);
@@ -47,17 +52,20 @@ public class GameScript : MonoBehaviour {
 
 	}
 	public void EnemyManager(Transform deadEnemy){
-		Debug.Log("Spawned event");
-		if ((curEnemy + 2) >= enemyLimit) {
-			SpawnEnemy (1, deadEnemy);
-		}else{
-			SpawnEnemy(2, deadEnemy);
+		//Debug.Log("Spawned event");
+		if (curEnemy < enemyLimit) {
+			if ((curEnemy + 2) >= enemyLimit) {
+				SpawnEnemy (1, deadEnemy);
+			} else if ((curEnemy + 2) <= enemyLimit) {
+				SpawnEnemy (2, deadEnemy);
 
+			}
+			Debug.Log (curEnemy);
 		}
 	}
 
 	public void EndGame(){
-		GameText.text = "LOSER!";
-
+		GameText.text = "Parting is such sweet sorrow!";
+		Application.LoadLevel ("EndScene");
 	}
 }
