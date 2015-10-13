@@ -46,16 +46,16 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Bullet.cs" />
-     <Compile Include="Assets\ButtonScript.cs" />
-     <Compile Include="Assets\EnemyScript.cs" />
-     <Compile Include="Assets\Fading.cs" />
-     <Compile Include="Assets\FloorTileScript.cs" />
-     <Compile Include="Assets\GameScript.cs" />
-     <Compile Include="Assets\IntroScript.cs" />
-     <Compile Include="Assets\MovingLightScript.cs" />
-     <Compile Include="Assets\PlayerScript.cs" />
-     <Compile Include="Assets\StrobeScript.cs" />
+     <Compile Include="Assets\Scripts\Bullet.cs" />
+     <Compile Include="Assets\Scripts\ButtonScript.cs" />
+     <Compile Include="Assets\Scripts\EnemyScript.cs" />
+     <Compile Include="Assets\Scripts\Fading.cs" />
+     <Compile Include="Assets\Scripts\FloorTileScript.cs" />
+     <Compile Include="Assets\Scripts\GameScript.cs" />
+     <Compile Include="Assets\Scripts\IntroScript.cs" />
+     <Compile Include="Assets\Scripts\MovingLightScript.cs" />
+     <Compile Include="Assets\Scripts\PlayerScript.cs" />
+     <Compile Include="Assets\Scripts\StrobeScript.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
      <None Include="Assets\Standard Assets\SciFi_Door\readme.txt" />
