@@ -56,8 +56,14 @@
      <Compile Include="Assets\Scripts\MovingLightScript.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\StrobeScript.cs" />
+     <Compile Include="Assets\SonarFx-master\Assets\Reaktion\Utility\ConstantMotion.cs" />
+     <Compile Include="Assets\SonarFx-master\Assets\Reaktion\Utility\JitterMotion.cs" />
+     <Compile Include="Assets\SonarFx-master\Assets\SonarFx\SonarFx.cs" />
+     <Compile Include="Assets\SonarFx-master\Assets\SonarFx\SonarFxSwitcher.cs" />
+     <Compile Include="Assets\SonarFx-master\Assets\SonarFxTest.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
+     <None Include="Assets\SonarFx-master\Assets\SonarFx\Shader\SonarFx.shader" />
      <None Include="Assets\Standard Assets\SciFi_Door\readme.txt" />
      <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
  <Reference Include="UnityEngine.UI">

@@ -22,23 +22,31 @@ public class PlayerScript : MonoBehaviour {
 	private AudioSource audioShoot;
 
 	public GameObject GameController;
-	GameObject GunEnd;
-	bool shooting = false;
-	int Ammo = 6;
+	public GameObject GunArm;
+	GameObject GunEnd, NormalPos, ADSPos;
+	bool shooting = false, sonarEnabled = false;
+	bool sonarSwap = false, Aiming = false;
+	int Ammo = 600;
 	int health = 10;
 	float AmmoRegen = 2f;
 	float SavedTime, TouchTime = 0;
 	bool Swapped2 = false, Swapped3 = false, Swapped4 = false;
+	//Bullet Variance
+	float strayFactor = 1;
 	// Use this for initialization
 	void Awake () {
+		this.gameObject.GetComponent<SonarFx>().enabled = false;
 		GunEnd = GameObject.FindGameObjectWithTag ("GunEnd");
+		NormalPos = GameObject.FindGameObjectWithTag ("NormalArmState");
+		ADSPos = GameObject.FindGameObjectWithTag ("ADSState");
+
 		SavedTime = Time.time;
 //		audioAmb = AddAudio(clipAmb, true, false, 0.2f);
 		audioAmb2 = AddAudio(clipAmb2, true, true, 0.2f); // always
 //		audioAmb3 = AddAudio(clipAmb3, true, false, 0.2f);
 //		audioAmb4 = AddAudio(clipAmb4, true, false, 0.2f);
 		audioShoot = AddAudio(clipShoot, false, false, 0.2f);
-		audioAmb2.Play ();
+		//audioAmb2.Play ();
 
 	}
 	public AudioSource AddAudio(AudioClip clip, bool loop, bool playAwake, float vol) { 
@@ -100,13 +108,15 @@ public class PlayerScript : MonoBehaviour {
 
 		if (Time.time - SavedTime >= AmmoRegen && Ammo < 10) {
 			SavedTime = Time.time;
-			Ammo+=1;
+			Ammo += 1;
 		}
 		Controls ();
 		UpdateUI ();
-		AudioUpdate ();
+		//AudioUpdate ();
+
 	}
 	void playAudio(){
+
 
 	}
 	void AudioUpdate(){
@@ -139,6 +149,11 @@ public class PlayerScript : MonoBehaviour {
 		}
 
 	}
+	void ADS(){
+		GunArm.gameObject.transform.position = ADSPos.gameObject.transform.position;
+		Aiming = true;
+		strayFactor = 0.5f;
+	}
 
 	void Controls() {
 		
@@ -149,6 +164,27 @@ public class PlayerScript : MonoBehaviour {
 		}
 		if (Input.GetKeyUp (KeyCode.Mouse0)) {
 			shooting = false;
+		}
+		if (Input.GetKeyDown(KeyCode.Mouse1) && Aiming == false) {
+			ADS();
+			
+		}
+		if (Input.GetKeyUp (KeyCode.Mouse1)) {
+			GunArm.gameObject.transform.position = NormalPos.gameObject.transform.position;
+			Aiming = false;
+			strayFactor = 1;
+		}
+		if (Input.GetKeyDown (KeyCode.X) && sonarSwap == false) {
+			Sonar ();
+		}
+		if (Input.GetKeyUp (KeyCode.X)) {
+			sonarSwap = false;
+		}
+		if (sonarEnabled == false) {
+			//Destroy(this.gameObject.GetComponent<SonarFx>());
+			
+		} else {
+			//this.gameObject.AddComponent<SonarFx> ();
 		}
 	}
 
@@ -161,9 +197,22 @@ public class PlayerScript : MonoBehaviour {
 		for (int i = 1; i <= health; i++) {
 			healthtemp = healthtemp + "█";
 		}
-		AmmoTxt.text= ammotemp;
-		HealthTxt.text= healthtemp;
+		//AmmoTxt.text= ammotemp;
+		//HealthTxt.text= healthtemp;
 
+	}
+
+	void Sonar(){
+		if(!sonarEnabled){
+			//Destroy(this.gameObject.GetComponent<SonarFx>());
+			this.gameObject.GetComponent<SonarFx>().enabled = false;
+			sonarEnabled = true;
+		}else{
+			//this.gameObject.AddComponent<SonarFx> ();
+			this.gameObject.GetComponent<SonarFx>().enabled = true;
+			sonarEnabled = false;
+		}
+		sonarSwap = true;
 	}
 	void Shoot(){
 
@@ -172,9 +221,17 @@ public class PlayerScript : MonoBehaviour {
 		GameObject iceProj = (GameObject)Instantiate (IceProjectile, GunEnd.gameObject.transform.position, this.gameObject.transform.rotation);
 		// clone.rigidbody.AddForce(clone.transform.forward * shootForce);
 
-		iceProj.transform.rotation = this.GetComponentInChildren<Transform> ().transform.rotation;
-		iceProj.GetComponent<Rigidbody> ().AddForce (iceProj.transform.forward * 500f); //Ice balls are slower
+		//iceProj.transform.rotation = this.GetComponentInChildren<Transform> ().transform.rotation;
+		//iceProj.GetComponent<Rigidbody> ().AddForce (iceProj.transform.forward * 500f); //Ice balls are slower
 		//iceProj.GetComponent<BulletScript>().type = "Ice";
+
+
+		float randomNumberX = Random.Range(-strayFactor, strayFactor);
+		float randomNumberY = Random.Range(-strayFactor, strayFactor);
+		float randomNumberZ = Random.Range(-strayFactor, strayFactor);
+		//var bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+		iceProj.transform.Rotate(randomNumberX, randomNumberY, randomNumberZ);
+		iceProj.GetComponent<Rigidbody>().AddForce(iceProj.transform.forward * 500);
 
 	}
 

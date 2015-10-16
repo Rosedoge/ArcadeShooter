@@ -47,8 +47,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
+     <Compile Include="Assets\SonarFx-master\Assets\Reaktion\Editor\Utility\ConstantMotionEditor.cs" />
+     <Compile Include="Assets\SonarFx-master\Assets\Reaktion\Editor\Utility\JitterMotionEditor.cs" />
+     <Compile Include="Assets\SonarFx-master\Assets\SonarFx\Editor\SonarFxEditor.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
+     <None Include="Assets\SonarFx-master\Assets\SonarFx\Shader\SonarFx.shader" />
      <None Include="Assets\Standard Assets\SciFi_Door\readme.txt" />
      <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
  <Reference Include="UnityEngine.UI">
