@@ -53,8 +53,10 @@
      <Compile Include="Assets\Scripts\FloorTileScript.cs" />
      <Compile Include="Assets\Scripts\GameScript.cs" />
      <Compile Include="Assets\Scripts\IntroScript.cs" />
+     <Compile Include="Assets\Scripts\M1911Script.cs" />
      <Compile Include="Assets\Scripts\MovingLightScript.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
+     <Compile Include="Assets\Scripts\SkorpScript.cs" />
      <Compile Include="Assets\Scripts\StrobeScript.cs" />
      <Compile Include="Assets\SonarFx-master\Assets\Reaktion\Utility\ConstantMotion.cs" />
      <Compile Include="Assets\SonarFx-master\Assets\Reaktion\Utility\JitterMotion.cs" />
