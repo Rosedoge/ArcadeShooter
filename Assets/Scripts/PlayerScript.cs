@@ -61,6 +61,10 @@ public class PlayerScript : MonoBehaviour {
 		newAudio.volume = vol; 
 		return newAudio; 
 	}
+	void OnTriggerEnter(Collider other) {
+
+
+	}
 	void OnTriggerStay(Collider other) {
 
 		if (other.gameObject.tag == "Enemy") {
