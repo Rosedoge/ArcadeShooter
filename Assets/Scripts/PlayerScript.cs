@@ -25,7 +25,7 @@ public class PlayerScript : MonoBehaviour {
 	bool sonarSwap = false, Aiming = false, Reloading = false;
 	int Ammo = 1000;
 	int health = 10;
-	float reloadTimer = 0f, SavedRTimer, ShotTimer;
+	float SavedRTimer, ShotTimer;
 	float SavedTime, TouchTime = 0;
 //	bool Swapped2 = false, Swapped3 = false, Swapped4 = false;
 

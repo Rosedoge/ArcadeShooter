@@ -19,10 +19,15 @@ public class EnemyScript : MonoBehaviour {
 	void Update () {
 //		NavMeshAgent agent = GetComponent<NavMeshAgent>();
 //		agent.destination = goal.gameObject.transform.position; 
+		if (health <= 0) {
+			Destroy(gameObject);
+
+		}
 	}
 
+
 	public void Damage(int amount){
-		health += amount;
+		health -= amount;
 		//probably works
 		//You can use negative to heal
 	}
@@ -31,6 +36,7 @@ public class EnemyScript : MonoBehaviour {
 	void OnTriggerEnter(Collider col){
 		if (col.gameObject.tag == "Explosion") {
 			gameObject.GetComponent<Rigidbody>().AddExplosionForce(20000f,col.gameObject.transform.position, 10f);
+			Damage (5);
 		}
 	}
 
@@ -38,7 +44,7 @@ public class EnemyScript : MonoBehaviour {
 		//Debug.Log ("WAH");
 		if (col.gameObject.tag == "Bullet") {
 
-			Damage (5);
+			Damage (1);
 		}
 
 	}
