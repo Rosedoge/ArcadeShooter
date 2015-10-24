@@ -47,14 +47,17 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
-     <Compile Include="Assets\SonarFx-master\Assets\Reaktion\Editor\Utility\ConstantMotionEditor.cs" />
-     <Compile Include="Assets\SonarFx-master\Assets\Reaktion\Editor\Utility\JitterMotionEditor.cs" />
-     <Compile Include="Assets\SonarFx-master\Assets\SonarFx\Editor\SonarFxEditor.cs" />
+     <Compile Include="Assets\Prefabs\SonarFx-master\Assets\Reaktion\Editor\Utility\ConstantMotionEditor.cs" />
+     <Compile Include="Assets\Prefabs\SonarFx-master\Assets\Reaktion\Editor\Utility\JitterMotionEditor.cs" />
+     <Compile Include="Assets\Prefabs\SonarFx-master\Assets\SonarFx\Editor\SonarFxEditor.cs" />
+     <Compile Include="Assets\TerrainToolkit\Editor\TerrainToolkitEditor.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
-     <None Include="Assets\SonarFx-master\Assets\SonarFx\Shader\SonarFx.shader" />
+     <None Include="Assets\Prefabs\SonarFx-master\Assets\SonarFx\Shader\SonarFx.shader" />
      <None Include="Assets\Standard Assets\SciFi_Door\readme.txt" />
+     <None Include="Assets\Prefabs\PBS Materials Variety Pack\readme.txt" />
      <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
+     <None Include="Assets\TerrainToolkit\Read me.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -117,6 +120,8 @@
       <Project>{DE7FF903-00CB-D570-A8F5-3F2EE457DB53}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{85A3674A-F9F1-961B-BB91-0B70CF7B9B20}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-UnityScript.unityproj">
+      <Project>{AB5EEDBD-ECE4-1147-BF42-121EDD40ACBF}</Project>      <Name>Assembly-UnityScript</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

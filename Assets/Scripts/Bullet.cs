@@ -33,11 +33,12 @@ public class Bullet : MonoBehaviour {
 		if (col.gameObject.tag == "Enemy" && HitEnemy == false) {
 //			//col.gameObject.GetComponent<EnemyScript>().Kill();
 //			HitEnemy = true;
+			col.gameObject.GetComponent<ShooterEnemyScript>().Damage(2);
 			GameObject.Destroy (this.gameObject);
 
 		} else if (col.gameObject.tag == "Untagged") {
 			//this.gameObject.GetComponent<Rigidbody>().
-
+			GameObject.Destroy (this.gameObject);
 		}
 
 

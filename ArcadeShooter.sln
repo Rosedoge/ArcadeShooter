@@ -9,6 +9,8 @@ Project("{27FC0B21-2D48-11DD-728F-D72A1B990CC0}") = "ArcadeShooter", "Assembly-C
 EndProject
 Project("{27FC0B21-2D48-11DD-728F-D72A1B990CC0}") = "ArcadeShooter", "Assembly-UnityScript-firstpass.unityproj", "{DE7FF903-00CB-D570-A8F5-3F2EE457DB53}"
 EndProject
+Project("{27FC0B21-2D48-11DD-728F-D72A1B990CC0}") = "ArcadeShooter", "Assembly-UnityScript.unityproj", "{AB5EEDBD-ECE4-1147-BF42-121EDD40ACBF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,11 +33,15 @@ Global
 		{DE7FF903-00CB-D570-A8F5-3F2EE457DB53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE7FF903-00CB-D570-A8F5-3F2EE457DB53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE7FF903-00CB-D570-A8F5-3F2EE457DB53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB5EEDBD-ECE4-1147-BF42-121EDD40ACBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB5EEDBD-ECE4-1147-BF42-121EDD40ACBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB5EEDBD-ECE4-1147-BF42-121EDD40ACBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB5EEDBD-ECE4-1147-BF42-121EDD40ACBF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																																								GlobalSection(MonoDevelopProperties) = preSolution
+																																																																																					GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

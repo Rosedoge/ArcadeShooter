@@ -203,9 +203,8 @@ public class PlayerScript : MonoBehaviour {
 			
 		}
 		if (Input.GetKeyUp (KeyCode.R)) {
-			GunArm.gameObject.transform.position = NormalPos.gameObject.transform.position;
-			Aiming = false;
-			strayFactor = 1;
+			Reloading = false;
+
 		}
 		if (Input.GetKeyDown (KeyCode.X) && sonarSwap == false) {
 			Sonar ();

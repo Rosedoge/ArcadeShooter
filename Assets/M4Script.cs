@@ -10,7 +10,7 @@ public class M4Script : MonoBehaviour {
 	const int MaxAmmoInReserve = 300;
 	public int AmmoInMag { get { return Ammo; } set { Ammo = value; } }
 	public int AmmoInReserve;
-	float strayFactor = 1;
+	//float strayFactor = 1;
 	// Use this for initialization
 	void Start () {
 		
@@ -37,7 +37,7 @@ public class M4Script : MonoBehaviour {
 		
 	}
 	
-	public void Shoot(bool ADS){
+	public void Shoot(float strayFactor){
 		if (AmmoInMag >= 1) {
 			AmmoInMag -= 1;
 			//GameObject iceProj = new GameObject ();
@@ -48,18 +48,13 @@ public class M4Script : MonoBehaviour {
 			//iceProj.GetComponent<Rigidbody> ().AddForce (iceProj.transform.forward * 500f); //Ice balls are slower
 			//iceProj.GetComponent<BulletScript>().type = "Ice";
 			//iceProj.GetComponent<BulletScript>().type = "Ice";
-			if(ADS){
-				strayFactor = 0.5f;
-			}else{
-				strayFactor = 1;
-			}
-			
+			iceProj.transform.forward = GunEnd.gameObject.transform.forward;
 			float randomNumberX = Random.Range (-strayFactor, strayFactor);
 			float randomNumberY = Random.Range (-strayFactor, strayFactor);
 			float randomNumberZ = Random.Range (-strayFactor, strayFactor);
 			//var bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
 			iceProj.transform.Rotate (randomNumberX, randomNumberY, randomNumberZ);
-			iceProj.GetComponent<Rigidbody> ().AddForce (iceProj.transform.forward * 700);
+			iceProj.GetComponent<Rigidbody> ().AddForce (iceProj.transform.forward * 500);
 		}
 	}
 }

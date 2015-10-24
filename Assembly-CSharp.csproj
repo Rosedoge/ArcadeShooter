@@ -46,10 +46,18 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AmmoBox.cs" />
      <Compile Include="Assets\ExplosiveBarrel.cs" />
      <Compile Include="Assets\ExplosiveScript.cs" />
      <Compile Include="Assets\M4Script.cs" />
+     <Compile Include="Assets\Muzzleflash Pack\Scripts\CombineChildren.cs" />
+     <Compile Include="Assets\Muzzleflash Pack\Scripts\MeshCombineUtility.cs" />
      <Compile Include="Assets\PlayerRewrite.cs" />
+     <Compile Include="Assets\Prefabs\SonarFx-master\Assets\Reaktion\Utility\ConstantMotion.cs" />
+     <Compile Include="Assets\Prefabs\SonarFx-master\Assets\Reaktion\Utility\JitterMotion.cs" />
+     <Compile Include="Assets\Prefabs\SonarFx-master\Assets\SonarFx\SonarFx.cs" />
+     <Compile Include="Assets\Prefabs\SonarFx-master\Assets\SonarFx\SonarFxSwitcher.cs" />
+     <Compile Include="Assets\Prefabs\SonarFx-master\Assets\SonarFxTest.cs" />
      <Compile Include="Assets\Scripts\Bullet.cs" />
      <Compile Include="Assets\Scripts\ButtonScript.cs" />
      <Compile Include="Assets\Scripts\EnemyScript.cs" />
@@ -62,16 +70,15 @@
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\SkorpScript.cs" />
      <Compile Include="Assets\Scripts\StrobeScript.cs" />
-     <Compile Include="Assets\SonarFx-master\Assets\Reaktion\Utility\ConstantMotion.cs" />
-     <Compile Include="Assets\SonarFx-master\Assets\Reaktion\Utility\JitterMotion.cs" />
-     <Compile Include="Assets\SonarFx-master\Assets\SonarFx\SonarFx.cs" />
-     <Compile Include="Assets\SonarFx-master\Assets\SonarFx\SonarFxSwitcher.cs" />
-     <Compile Include="Assets\SonarFx-master\Assets\SonarFxTest.cs" />
+     <Compile Include="Assets\ShooterEnemyScript.cs" />
+     <Compile Include="Assets\TerrainToolkit\TerrainToolkit.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
-     <None Include="Assets\SonarFx-master\Assets\SonarFx\Shader\SonarFx.shader" />
+     <None Include="Assets\Prefabs\SonarFx-master\Assets\SonarFx\Shader\SonarFx.shader" />
      <None Include="Assets\Standard Assets\SciFi_Door\readme.txt" />
+     <None Include="Assets\Prefabs\PBS Materials Variety Pack\readme.txt" />
      <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
+     <None Include="Assets\TerrainToolkit\Read me.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

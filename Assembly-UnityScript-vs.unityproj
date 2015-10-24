@@ -46,11 +46,18 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\SciFi_Door\Script\door.js" />
+     <Compile Include="Assets\Muzzleflash Pack\Scripts\MouseOrbit.js" />
+     <Compile Include="Assets\TerrainToolkit\TerrainToolkitEnums.js" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
-     <None Include="Assets\SciFi_Door\readme.txt" />
+     <None Include="Assets\Prefabs\SonarFx-master\Assets\SonarFx\Shader\SonarFx.shader" />
+     <None Include="Assets\Standard Assets\SciFi_Door\readme.txt" />
+     <None Include="Assets\Prefabs\PBS Materials Variety Pack\readme.txt" />
      <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
+     <None Include="Assets\TerrainToolkit\Read me.txt" />
+ <Reference Include="Assembly-UnityScript-firstpass">
+ <HintPath>C:/Users/Conor/Desktop/ArcadeShooter/ArcadeShooter/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
